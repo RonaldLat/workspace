@@ -72,7 +72,8 @@ ZSH_THEME="tjkirch" # set by `omz`
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	catimg
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,6 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+#
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bg=#114f5e"
 
@@ -105,6 +111,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bg=#114f5e"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias cat="batcat"
-alias nvim="exec ~/ronfiles/nvim.appimage"
-source /home/ronald/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/ronald/zsh-autosuggestions/zsh-autosuggestions.zsh
+alias nvim="exec ~/workspace/workspace/nvim.appimage"
+source /workspace/workspace/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
